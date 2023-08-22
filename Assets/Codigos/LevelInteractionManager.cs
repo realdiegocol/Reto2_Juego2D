@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public enum GameState
 {
@@ -59,4 +60,16 @@ public class LevelInteractionManager : MonoBehaviour
     }
 
     // Other methods...
+
+    public void RestartLevel()
+    {
+        // Load the currently active scene again
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void GoToMainMenu()
+    {
+        // Load the "Intro" scene
+        SceneManager.LoadScene("Intro");
+    }
 }
